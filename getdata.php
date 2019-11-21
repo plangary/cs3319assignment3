@@ -1,9 +1,17 @@
+<h1>All the doctors</h1>
 <?php
-$query = "SELECT * FROM doctor ORDER BY firstName,lastName";
+    include 'connectdb.php'
+?>
+
+<?php
+$order= $_POST["order"];
+$query = "SELECT * FROM doctor ORDER BY $order";
+
 $result = mysqli_query($connection,$query);
 if (!$result) {
     die("databases query failed.");
 }
+echo "<h1>Here are the doctors ordered by {$order}</h1>";
 echo "<ul>";
 while ($row = mysqli_fetch_assoc($result)) {
     echo "<li>";
@@ -14,4 +22,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 mysqli_free_result($result);
 echo "</ul>";
-?>
+mysqli_close($connection);
+
+?><br><br>
+<a href="index.php">RETURN TO PREVIOUS PAGE</a>
