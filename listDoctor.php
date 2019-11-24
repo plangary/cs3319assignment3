@@ -12,16 +12,19 @@ include 'connectdb.php';
 <ol>
 <?php
    $docId= $_POST["doctors"];
-    echo "<h1>". $docId . "</h1>";
-   $query = "SELECT * FROM doctor WHERE docLicNum = '$docId'";
+   $query = "SELECT * FROM doctor, hospital WHERE docLicNum = '$docId'";
    $result=mysqli_query($connection,$query);
     if (!$result) {
          die("database query2 failed.");
      }
+    
     while ($row=mysqli_fetch_assoc($result)) {
         echo"<ul>";
-        echo $row["firstName"] . "</ul>";
+        echo $row["firstName"] . " ". $row["lastName"] . " " . $row["docLicNum"] . " ". $row["speciality"] . " ". $row["licenseDate"] . " ". $row["hosWorksAt"] .  "</ul>";
+        break;
      }
+
+
      mysqli_free_result($result);
 ?>
 </ol>
