@@ -19,6 +19,23 @@ include 'connectdb.php';
     <input type = "radio" name="order" value="lastName DESC">Alphabetically by last name Descending<br>    
         
     <input type= "submit" value="Submit">
-    </form>  
+    </form> 
+    <br>
+    <hr>
+    <br>
+    
+    <form action ="doctorDates.php" method="post">
+    Please enter license date (YYYY-MM-DD)
+    <input type = "text" name = "date" maxlength="10">
+    <input type = "submit" value="Search Date">    
+    </form>
+    
+    
+    
+    
+    
+    
+    
+    
 </body>
 </html>
