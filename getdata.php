@@ -20,7 +20,7 @@ echo "<ul>";
 while ($row = mysqli_fetch_assoc($result)) {
     echo '<input type="radio" name="doctors" value="';
     echo $row["docLicNum"];
-    echo '">' . $row["firstName"] . " " . $row["lastName"] .  $row["hosWorksAt"].   "<br>";
+    echo '">' . $row["firstName"] . " " . $row["lastName"] .   "<br>";
     #echo "<h2>" . $row["docLicNum"] . "</h2>";
 }
 echo '<input type= "submit" value="Submit">';

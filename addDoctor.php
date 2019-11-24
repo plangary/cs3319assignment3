@@ -16,11 +16,15 @@
     $licenseDate = $_POST["licenseDate"];
     $hosWorksAt = $_POST["hosWorksAt"];
     
+
     
+    if(empty($_POST["hosWorksAt"])){
+        die("You must enter a value for hospital location!");
+    }
     $query = "SELECT docLicNum FROM doctor WHERE doctor.docLicNum='$docLicNum'";
     $result = mysqli_query($connection, $query);
     
-    if($hosWorksAt != "BBC" || $hosWorksAt != "ABC" || $hosWorksAt != "DDE"){
+    if($hosWorksAt == "BBC" || $hosWorksAt == "ABC" || $hosWorksAt == "DDE"){
         die("Please enter a valid hospital location");
     }
     if(!result) {

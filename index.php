@@ -52,7 +52,7 @@ include 'connectdb.php';
     <input type = "text" name = "licenseDate" maxlength = "10">
     <br><br>    
     Location of Hospital (BBC, ABC, DDE)    
-    <input type = "text" name = "hosWorksAt" maxlength = "3">
+    <input type = "text" name = "hosWorksAt"  required maxlength = "3">
     <br><br>    
     <input type = "submit" value="Submit">    
 
