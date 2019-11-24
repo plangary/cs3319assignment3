@@ -19,9 +19,6 @@ include 'connectdb.php';
     <input type = "radio" name="order" value="lastName DESC">Alphabetically by last name Descending<br>    
         
     <input type= "submit" value="Submit">
-    
-    
-    
     </form>  
 </body>
 </html>
