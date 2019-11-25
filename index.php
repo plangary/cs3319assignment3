@@ -73,7 +73,16 @@ include 'connectdb.php';
     Hospital code    
     <input type = "text" name = "hosCode" maxlength = "20"> <br><br>  
     <input type = "submit" value="Update">    
-    </form>    
+    </form>
+    <br>
+    <hr>
+    <br>
+    <h3>Get hospital info</h3>
+    <br>
+    <form action = "hospitalInfo.php" method= "post">
+    <input type = "submit" value="Get info">    
+    </form>
+
     
 </body>
 </html>

@@ -26,7 +26,6 @@
         die("Doctor does not exist! Please enter a valid license number.");
         }
         else{
-            $query3= "SELECT *"
             $query2= "DELETE FROM doctor WHERE doctor.docLicNum='$docLicNum'";
             if(!mysqli_query($connection,$query2)){
             die("Query failed!: " . mysqli_error($connection));

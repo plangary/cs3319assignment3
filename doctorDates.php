@@ -7,9 +7,7 @@
 <body>
     <?php
     include 'connectdb.php';
-    if(empty($_POST["hosWorksAt"])){
-        die("You must enter a value for hospital location!");
-    }
+    
     $date = $_POST["date"];
     $query = "SELECT * FROM doctor WHERE licenseDate < '$date' ";
     $result=mysqli_query($connection,$query);
