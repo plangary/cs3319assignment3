@@ -13,16 +13,14 @@ include 'connectdb.php';
     <h3>How would you like to order the list of doctors?</h3> <br>
     <input type = "radio" name="order" value="firstName ASC">Alphabetically by first name Ascending<br>
     <input type = "radio" name="order" value="firstName DESC">Alphabetically by first name Descending<br>
-    
     <input type = "radio" name="order" value="lastName ASC">Alphabetically by last name Ascending<br>
-    
     <input type = "radio" name="order" value="lastName DESC">Alphabetically by last name Descending<br>    
-        
     <input type= "submit" value="Submit">
     </form> 
     <br>
     <hr>
     <br>
+    
     <h3>Search License before specific date</h3>
     <form action ="doctorDates.php" method="post">
     Please enter license date (YYYY-MM-DD)
@@ -53,10 +51,9 @@ include 'connectdb.php';
     <br><br>    
     Location of Hospital (BBC, ABC, DDE)    
     <input type = "text" name = "hosWorksAt"  required maxlength = "3">
-    <br><br>    
+    <br><br> 
     <input type = "submit" value="Submit">    
     </form>
-    
     <br>
     <hr>
     <br>
@@ -66,12 +63,17 @@ include 'connectdb.php';
     <input type = "text" name = "docLicNum" maxlength = "4">
     <input type = "submit" value="Submit">    
     </form>
-      
-
-    
-    
-    
-    
+    <br>
+    <hr>
+    <br>
+    <h3>Update hospital name</h3>
+    <form action = "updateHospital.php" method= "post">
+    New hospital name    
+    <input type = "text" name = "name" maxlength = "20"><br><br>
+    Hospital code    
+    <input type = "text" name = "hosCode" maxlength = "20"> <br><br>  
+    <input type = "submit" value="Update">    
+    </form>    
     
 </body>
 </html>
