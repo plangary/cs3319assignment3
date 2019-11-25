@@ -55,9 +55,19 @@ include 'connectdb.php';
     <input type = "text" name = "hosWorksAt"  required maxlength = "3">
     <br><br>    
     <input type = "submit" value="Submit">    
-
     </form>
     
+    <br>
+    <hr>
+    <br>
+    
+    <h3>Enter the license number of the doctor you want to delete</h3>
+    <form action = "deleteDoctor.php" method= "post">
+    <input type = "text" name = "docLicNum" maxlength = "4">
+    <input type = "submit" value="Submit">    
+    </form>
+      
+
     
     
     
