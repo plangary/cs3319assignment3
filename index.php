@@ -14,7 +14,7 @@ include 'connectdb.php';
     <input type = "radio" name="order" value="firstName ASC">Alphabetically by first name Ascending<br>
     <input type = "radio" name="order" value="firstName DESC">Alphabetically by first name Descending<br>
     <input type = "radio" name="order" value="lastName ASC">Alphabetically by last name Ascending<br>
-    <input type = "radio" name="order" value="lastName DESC">Alphabetically by last name Descending<br>    
+    <input type = "radio" name="order" value="lastName DESC">Alphabetically by last name Descending<br><br>   
     <input type= "submit" value="Submit">
     </form> 
     <br>
@@ -82,6 +82,29 @@ include 'connectdb.php';
     <form action = "hospitalInfo.php" method= "post">
     <input type = "submit" value="Get info">    
     </form>
+    <br>
+    <hr>
+    <br>
+    <form action = "patientInfo.php" method= "post">
+    <h3>Enter the ohip number of the patient you would like to view</h3>
+    <br><br>
+    Ohip number    
+    <input type = "text" name = "ohip" maxlength = "20"> <br><br>  
+    <input type = "submit" value="Submit">    
+    </form>
+    <br>
+    <hr>
+    <br>
+    <form action = "editPatient.php" method= "post">
+    <h3>Assign doctor to treat patient</h3><br><br>
+    OHIP Number
+    <input type = "text" name = "ohip" required maxlength = "20"> <br><br>
+    Doctor license number
+    <input type = "text" name = "docLicNum" required maxlength = "4"> <br><br>
+    <input type = "radio" name="type" value="stop">Stop treating patient<br>
+    <input type = "radio" name="type" value="treat">Assign doctor to patient<br><br>
+    <input type = "submit" value="Submit"><br><br>
+    </form>    
 
     
 </body>
