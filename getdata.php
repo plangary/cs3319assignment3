@@ -6,6 +6,7 @@
 ?>
 
 <?php
+//store how the user wants to order doctors and run query
 $order= $_POST["order"];
 $query = "SELECT * FROM doctor ORDER BY $order";
 
@@ -17,6 +18,7 @@ echo '<form action = "listDoctor.php" method="post">';
     
 echo "<h1>Here are the doctors ordered by {$order}</h1>";
 echo "<ul>";
+//output the doctors using radio buttons
 while ($row = mysqli_fetch_assoc($result)) {
     echo '<input type="radio" name="doctors" value="';
     echo $row["docLicNum"];
@@ -30,8 +32,7 @@ mysqli_free_result($result);
 echo "</ul>";
 mysqli_close($connection);
 
-?><br><br>
-    
+?><br><br>    
 <a href="index.php">RETURN TO PREVIOUS PAGE</a>
 </body>
 </html>

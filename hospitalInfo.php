@@ -9,13 +9,14 @@
     include 'connectdb.php';
     echo "<br><br>";
     echo "<h2>Here's the info we have for the hospitals</h2>";
-
+    //run query to get all the info of the hospital
     $query = "select h.name, d.firstName, d.lastName, h.headDocStartDate from hospital h, doctor d where h.headDoc = d.docLicNum order by h.name";
     $result = mysqli_query($connection, $query);
     if(!result) {
         die("database query failed.");
     }
     echo "<ul>";
+    //output all the info for the hospital
     while ($row = mysqli_fetch_assoc($result)) {
     echo "Hospital Name: ". $row["name"]."<br>". "First Name: " . $row["firstName"]. "<br>" ."Last Name: ". $row["lastName"]."<br>". "Start Date: ". $row["headDocStartDate"].   "<br>";
     echo "<br><br>";    
