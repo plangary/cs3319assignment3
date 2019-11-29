@@ -105,7 +105,13 @@ include 'connectdb.php';
     <input type = "radio" name="type" value="treat">Assign doctor to patient<br><br>
     <input type = "submit" value="Submit"><br><br>
     </form>    
-
+    <br>
+    <hr>
+    <br>
+    <h3>Doctors with no patients</h3><br>
+    <form action = "noPatients.php" method= "post">
+    <input type = "submit" value="Get info">    
+    </form>
     
 </body>
 </html>
