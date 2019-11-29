@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <title>Doctors</title>
 </head>
-    <h2>Here are the doctors with no patients</h2>
 <body>
     <?php
     include 'connectdb.php';
+    echo "<br><br>";
+    echo "<h2>Here are the doctors with no patients</h2>";
+
     //run query to check for doctors with no patients
     $query = "select firstName, lastName from doctor d where not exists (select null from treats where d.docLicNum = treats.docLicNum)";
     

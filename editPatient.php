@@ -7,12 +7,14 @@
     $ohip = $_POST["ohip"];
     $docLicNum= $_POST["docLicNum"];
     $type = $_POST["type"];
-    $pName= '';
-    $dName= '';
+    $pName= ''; //store patient name
+    $dName= ''; //store doctor name
     
-  
+    //run query to check if patient exists
     $query1="SELECT * FROM patient WHERE patient.ohip ='$ohip'";
+    //run query to check if doctor exists
     $query2 = "SELECT * FROM doctor WHERE doctor.docLicNum = '$docLicNum'";
+    //run query to check if patient is being treated by anyone
     $query3 = "SELECT * FROM treats where ohip = '$ohip' and docLicNum = '$docLicNum'";
     
     $result = mysqli_query($connection, $query1);
@@ -45,7 +47,7 @@
         die("database query failed-3.");
     }
     
-    
+    //if user wants to stop treating patient, check if patient is being treated first by specified doctor
     else if($type==="stop"){
         if(mysqli_num_rows($result) == 0){
             die("$pName is not being treated by $dName.");
@@ -54,6 +56,7 @@
    
 
     if($type==="stop"){
+        //run query to delete record
         $query4 = "DELETE FROM treats WHERE ohip='$ohip' and docLicNum='$docLicNum'";
         $result = mysqli_query($connection, $query4);
         if(!result) {
@@ -63,6 +66,7 @@
         echo "<br><br>";
     }
     else{
+        //run query to insert record
         $query5 = "INSERT INTO treats VALUES ('$docLicNum','$ohip')";
         $result = mysqli_query($connection, $query5);
          if(!result) {
