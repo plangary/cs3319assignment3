@@ -25,6 +25,7 @@
     //iterate through each row of query and output first name and last name of the doctor
     while ($row = mysqli_fetch_assoc($result)) {
         echo $row["firstName"] . " ". $row["lastName"];
+        echo "<br><br>";
     }
     echo "</ul>";    
     mysqli_free_result($result);
